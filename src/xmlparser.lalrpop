@@ -1,0 +1,15 @@
+grammar ;
+
+
+pub Document : String =< s : r#"<\? *version *= *".*" +encoding *= *".*" *\?>"#> => s.to_string();
+
+
+TagName : str = {
+
+
+
+}
+
+
+Comment : String  = < s:r"<!--.*--> "> => s.to_string();
+Cdata : String  = <s:r"<!\[CDATA\[.*]-->" > => s.to_string() ;
